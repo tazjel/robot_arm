@@ -99,3 +99,19 @@ There are a couple of canned actions already in the module:
     block_left
     block_right
     left_and_blink
+
+Troubleshooting
+===============
+
+* Linux - permissions:
+You will either need to run as root (not recommended) or modify your system to allow all users access to the device.
+
+    sudo nano /etc/udev/rules.d/42-usb-arm-permissions.rules
+
+and add:
+
+    SUBSYSTEM=="usb", ATTR{idVendor}=="1267", ATTR{idProduct}=="0000", MODE:="0666"
+
+Plug in the device and you should be able to access it. Tested on Ubuntu and Mint Linux versions.
+
+
