@@ -3,9 +3,10 @@ import os
 os.environ['DYLD_LIBRARY_PATH']='/opt/local/lib'
 import usb.core
 from time import sleep
-import functools
+
 
 class BitPattern(object):
+    """A bitpattern to send to a robot arm"""
     __slots__ = ['arm', 'base', 'led']
 
     def __init__(self, arm, base, led):
